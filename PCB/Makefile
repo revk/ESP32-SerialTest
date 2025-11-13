@@ -1,6 +1,6 @@
 all:	png stl */README.md
 
-stl:	HelloWorld3/HelloWorld3[TBC].stl
+stl:	S213/S213[TBC].stl
 
 png:	$(patsubst %.kicad_pcb,%.png,$(wildcard */*.kicad_pcb))
 
@@ -27,6 +27,6 @@ update:
 %/README.md: %/*.kicad_pcb %/*.stl PCBCase/readme
 	PCBCase/readme $@
 
-HelloWorld3/HelloWorld3T.scad: HelloWorld3/HelloWorld3.kicad_pcb PCBCase/case PCBCase/case
+S213/S213T.scad: S213/S213.kicad_pcb PCBCase/case PCBCase/case
 	PCBCase/case -o $@ $< --edge=2 --top=6 --bottom=2 --pcb=2 --two-file --date-angle=90 --date-x=11.4
 
