@@ -1,6 +1,6 @@
 all:	png stl */README.md
 
-stl:	S21/S21[TBC].stl ISO7816/ISO7816[TBC].stl
+stl:	S21/S21[TBC].stl
 
 png:	$(patsubst %.kicad_pcb,%.png,$(wildcard */*.kicad_pcb))
 
@@ -29,6 +29,3 @@ update:
 
 S21/S21T.scad: S21/S21.kicad_pcb PCBCase/case PCBCase/case
 	PCBCase/case -o $@ $< --edge=2 --top=6 --bottom=2 --pcb=2 --two-file --date-angle=90 --date-x=11.4
-
-ISO7816/ISO7816T.scad: ISO7816/ISO7816.kicad_pcb PCBCase/case PCBCase/case
-	PCBCase/case -o $@ $< --edge=2 --top=6 --bottom=2 --two-file --case=4
